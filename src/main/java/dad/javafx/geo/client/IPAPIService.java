@@ -17,7 +17,7 @@ public class IPAPIService {
 	public Geolocation ipData(String ip) throws Exception {
 		Geolocation geo = new Geolocation();
 		try {
-			geo = Unirest.get("http://api.ipapi.com/" + ip + "?access_key=" + apiKey + "&format=1")
+			geo = Unirest.get("http://api.ipapi.com/" + ip + "?access_key=" + apiKey)
 					.asObject(Geolocation.class).getBody();
 		} catch (UnirestException e) {
 			Mensaje.mostrarAlert("error", "Error", "No se ha podido obtener datos de la IP: " + ip);
